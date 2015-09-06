@@ -53,7 +53,7 @@ func TestEngine_LoadMetadataIndex_Series(t *testing.T) {
 
 	// Load metadata index.
 	index := tsdb.NewDatabaseIndex()
-	if err := e.LoadMetadataIndex(index, make(map[string]*tsdb.MeasurementFields)); err != nil {
+	if err := e.LoadMetadataIndex(nil, index, make(map[string]*tsdb.MeasurementFields)); err != nil {
 		t.Fatal(err)
 	}
 
@@ -95,7 +95,7 @@ func TestEngine_LoadMetadataIndex_Fields(t *testing.T) {
 
 	// Load metadata index.
 	mfs := make(map[string]*tsdb.MeasurementFields)
-	if err := e.LoadMetadataIndex(tsdb.NewDatabaseIndex(), mfs); err != nil {
+	if err := e.LoadMetadataIndex(nil, tsdb.NewDatabaseIndex(), mfs); err != nil {
 		t.Fatal(err)
 	}
 

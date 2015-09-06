@@ -76,6 +76,8 @@ func NewServer(c *Config, version string) (*Server, error) {
 	tsdbStore := tsdb.NewStore(c.Data.Dir)
 	tsdbStore.EngineOptions.Config = c.Data
 
+	runtime.GOMAXPROCS(runtime.NumCPU())
+
 	s := &Server{
 		version: version,
 		err:     make(chan error),
