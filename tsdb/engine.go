@@ -18,7 +18,7 @@ var (
 )
 
 // DefaultEngine is the default engine used by the shard when initializing.
-const DefaultEngine = "bz1"
+const DefaultEngine = "pd1"
 
 // Engine represents a swappable storage engine for the shard.
 type Engine interface {

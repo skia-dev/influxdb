@@ -3,7 +3,6 @@ package main
 import (
 	"flag"
 	"fmt"
-	"math/rand"
 	"net/url"
 	"runtime"
 	"sort"
@@ -48,12 +47,15 @@ func main() {
 		Time:             time.Now(),
 		Precision:        "n",
 	}
+	startingTime := time.Now().Round(time.Second).Add(-time.Duration(*pointCount) * time.Second)
 	for i := 1; i <= *pointCount; i++ {
+		t := startingTime.Add(time.Duration(i) * time.Second)
 		for j := 1; j <= *seriesCount; j++ {
 			p := client.Point{
 				Measurement: "cpu",
 				Tags:        map[string]string{"region": "uswest", "host": fmt.Sprintf("host-%d", j)},
-				Fields:      map[string]interface{}{"value": rand.Float64()},
+				Fields:      map[string]interface{}{"value": float64(i)},
+				Time:        t,
 			}
 			batch.Points = append(batch.Points, p)
 			if len(batch.Points) >= *batchSize {
@@ -80,7 +82,6 @@ func main() {
 					Database:         *database,
 					WriteConsistency: "any",
 					Precision:        "n",
-					Time:             time.Now(),
 				}
 			}
 		}
