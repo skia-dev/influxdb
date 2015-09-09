@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"math/rand"
 	"net/url"
 	"runtime"
 	"sort"
@@ -54,7 +55,7 @@ func main() {
 			p := client.Point{
 				Measurement: "cpu",
 				Tags:        map[string]string{"region": "uswest", "host": fmt.Sprintf("host-%d", j)},
-				Fields:      map[string]interface{}{"value": float64(i)},
+				Fields:      map[string]interface{}{"value": float64(rand.Intn(1000))},
 				Time:        t,
 			}
 			batch.Points = append(batch.Points, p)
