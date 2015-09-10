@@ -75,7 +75,7 @@ BINS=(
 # usage prints simple usage information.
 usage() {
     cat << EOF >&2
-$0 [-h] [-p|-w] [-t <dist>] <version>
+$0 [-h] [-p|-w] [-t <dist>] [-r <number>] <version>
     -p just build packages
     -w build packages for current working directory
        imply -p
@@ -83,6 +83,8 @@ $0 [-h] [-p|-w] [-t <dist>] <version>
        build package for <dist>
        <dist> can be rpm, tar or deb
        can have multiple -t
+    -r <number>
+       If this an RC supply the number e.g. 2.
 EOF
     cleanup_exit $1
 }
@@ -188,6 +190,16 @@ make_dir_tree() {
         cleanup_exit 1
     fi
 }
+
+# RPM versioning has some particular requirements.
+rpm_version() {
+    if [ -z "$RC" ]; then
+        echo influxdb-${VERSION}-1
+    else
+        echo influxdb-${VERSION}-0.1.rc${RC}
+    fi
+}
+
 
 # do_build builds the code. The version and commit must be passed in.
 do_build() {
@@ -311,6 +323,14 @@ do
         WORKING_DIR="WORKING_DIR"
 	shift
 	;;
+    -r)
+        RC=$2
+        if [ -z "$RC" ]; then
+            echo "No RC supplied"
+            usage 1
+        fi
+        shift 2
+        ;;
     -*)
         echo "Unknown option $1"
         usage 1
@@ -422,15 +442,15 @@ if [ -z "$NIGHTLY_BUILD" -a -z "$PACKAGES_ONLY" ]; then
 fi
 
 if [ $ARCH == "i386" ]; then
-    rpm_package=influxdb-${VERSION}-1.i686.rpm # RPM packages use 1 for default package release.
+    rpm_package=`rpm_version`.i686.rpm # RPM packages use 1 for default package release.
     debian_package=influxdb_${VERSION}_i686.deb
     deb_args="-a i686"
     rpm_args="setarch i686"
 elif [ $ARCH == "arm" ]; then
-    rpm_package=influxdb-${VERSION}-1.armel.rpm
+    rpm_package=`rpm_version`.armel.rpm
     debian_package=influxdb_${VERSION}_armel.deb
 else
-    rpm_package=influxdb-${VERSION}-1.x86_64.rpm
+    rpm_package=`rpm_version`.x86_64.rpm
     debian_package=influxdb_${VERSION}_amd64.deb
 fi
 
