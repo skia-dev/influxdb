@@ -42,19 +42,18 @@ type query struct {
 	Statement   string        `toml:"statement"`
 }
 
-type Test struct {
+type StressTest struct {
 	Write   write    `toml:"write"`
 	Series  []series `toml:"series"`
 	Queries []query  `toml:"query"`
 }
 
-func main() {
+func DecodeFile(s string) (*StressTest, err) {
 	t := &Test{}
-	if _, err := toml.DecodeFile("example.toml", t); err != nil {
-		fmt.Println(err)
-		return
+
+	if _, err := toml.DecodeFile(s, t); err != nil {
+		return nil, err
 	}
 
-	fmt.Println(t)
-
+	return t, nil
 }
