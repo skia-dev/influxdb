@@ -40,6 +40,10 @@ const (
 	// This number multiplied by the parition count is roughly the max possible memory
 	// size for the in-memory WAL cache.
 	DefaultPartitionSizeThreshold = 50 * 1024 * 1024 // 50MB
+
+	// Default WAL settings for the PD1 WAL
+	DefaultFlushMemorySizeThreshold = 50 * 1024 * 1024  // 50MB
+	DefaultMaxMemorySizeThreshold   = 200 * 1024 * 1024 // 200MB
 )
 
 type Config struct {
@@ -51,13 +55,15 @@ type Config struct {
 	WALPartitionFlushDelay toml.Duration `toml:"wal-partition-flush-delay"`
 
 	// WAL configuration options for bz1 (introduced in 0.9.3)
-	WALDir                    string        `toml:"wal-dir"`
-	WALLoggingEnabled         bool          `toml:"wal-logging-enabled"`
-	WALReadySeriesSize        int           `toml:"wal-ready-series-size"`
-	WALCompactionThreshold    float64       `toml:"wal-compaction-threshold"`
-	WALMaxSeriesSize          int           `toml:"wal-max-series-size"`
-	WALFlushColdInterval      toml.Duration `toml:"wal-flush-cold-interval"`
-	WALPartitionSizeThreshold uint64        `toml:"wal-partition-size-threshold"`
+	WALDir                      string        `toml:"wal-dir"`
+	WALLoggingEnabled           bool          `toml:"wal-logging-enabled"`
+	WALReadySeriesSize          int           `toml:"wal-ready-series-size"`
+	WALCompactionThreshold      float64       `toml:"wal-compaction-threshold"`
+	WALMaxSeriesSize            int           `toml:"wal-max-series-size"`
+	WALFlushColdInterval        toml.Duration `toml:"wal-flush-cold-interval"`
+	WALPartitionSizeThreshold   uint64        `toml:"wal-partition-size-threshold"`
+	WALFlushMemorySizeThreshold int           `toml:"wal-flush-memory-size-threshold"`
+	WALMaxMemorySizeThreshold   int           `toml:"wal-max-memory-size-threshold"`
 }
 
 func NewConfig() Config {
@@ -66,11 +72,13 @@ func NewConfig() Config {
 		WALFlushInterval:       toml.Duration(DefaultWALFlushInterval),
 		WALPartitionFlushDelay: toml.Duration(DefaultWALPartitionFlushDelay),
 
-		WALLoggingEnabled:         true,
-		WALReadySeriesSize:        DefaultReadySeriesSize,
-		WALCompactionThreshold:    DefaultCompactionThreshold,
-		WALMaxSeriesSize:          DefaultMaxSeriesSize,
-		WALFlushColdInterval:      toml.Duration(DefaultFlushColdInterval),
-		WALPartitionSizeThreshold: DefaultPartitionSizeThreshold,
+		WALLoggingEnabled:           true,
+		WALReadySeriesSize:          DefaultReadySeriesSize,
+		WALCompactionThreshold:      DefaultCompactionThreshold,
+		WALMaxSeriesSize:            DefaultMaxSeriesSize,
+		WALFlushColdInterval:        toml.Duration(DefaultFlushColdInterval),
+		WALPartitionSizeThreshold:   DefaultPartitionSizeThreshold,
+		WALFlushMemorySizeThreshold: DefaultFlushMemorySizeThreshold,
+		WALMaxMemorySizeThreshold:   DefaultMaxMemorySizeThreshold,
 	}
 }
