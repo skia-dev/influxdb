@@ -14,7 +14,7 @@
   measurement = "cpu"
   series_count = 100000
 
-  tag_count = 20 # doesnt do anything yet
+  tag_count = 20 # number of "generic" tags on a series (e.g. tag-key-1=tag-value, ... ,tag-key-20=tag-value)
 
   [[series.tag]]
     key = "host"

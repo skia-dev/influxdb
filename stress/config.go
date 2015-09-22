@@ -29,6 +29,7 @@ type series struct {
 	PointCount  int     `toml:"point_count"`
 	Measurement string  `toml:"measurement"`
 	SeriesCount int     `toml:"series_count"`
+	TagCount    int     `toml:"tag_count"`
 	Tags        []tag   `toml:"tag"`
 	Fields      []field `toml:"field"`
 }
@@ -115,8 +116,27 @@ func NewConfig() *Config {
 func DecodeFile(s string) (*Config, error) {
 	t := &Config{}
 
+	// Decode the toml file
 	if _, err := toml.DecodeFile(s, t); err != nil {
 		return nil, err
+	}
+
+	// Initialize Config struct
+	// NOTE: Not happy with the implementation
+	// but it will do for now
+	for j, srs := range t.Series {
+		for i := 0; i < srs.TagCount; i++ {
+
+			tag := tag{
+				Key:   fmt.Sprintf("tag-key-%d", i),
+				Value: "tag-value",
+			}
+
+			srs.Tags = append(srs.Tags, tag)
+			fmt.Println(srs)
+		}
+
+		t.Series[j] = srs
 	}
 
 	return t, nil
