@@ -6,7 +6,7 @@
   precision = "n"
   address = "localhost:8086"
   reset_database = true
-  # doesnt do anything
+  # works, but dont use it
   starting_point = 0 # how far back in time to go in weeks
 
 [[series]]
@@ -68,15 +68,19 @@
     key = "idk"
     type = "int"
 
-# Currently not functional
-[[query]]
+[measurement_query] # SELECT aggregates(values) FROM measurements WHERE tag-key='tag-values-1' extras
+  enabled = true
   concurrency = 10
-  measurement = "cpu"
-  tag_key = "host"
-  time_frame = "5m" # defaults to 0 which will query over all time
-  statement = "SELECT count(value) FROM #{measurement} WHERE #{tag_key}=#{tag_value}" # needs work
+  aggregates = ["mean", "count"]
+  fields = ["value"]
+  extras = "GROUP BY time(1h)"
+  interval = "500ms"
 
-[[query]]
-  concurrency = 1
-  statement = "SELECT count(value) FROM cpu" # needs work
-
+[series_query] # SELECT aggregates(values) FROM measurements WHERE time > current_timespan extras
+  enabled = true
+  concurrency = 10
+  aggregates = ["mean", "count"]
+  fields = ["value"]
+  extras = "GROUP BY time(1h)"
+  timespan = "5m"
+  interval = "50ms"

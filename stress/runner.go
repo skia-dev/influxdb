@@ -107,7 +107,6 @@ func (ms *Measurements) Set(value string) error {
 // a `Config`'s `Address` field. If an error is encountered
 // when creating a new client, the function panics.
 func (cfg *Config) NewClient() (*client.Client, error) {
-	fmt.Printf("CFG: %#v\n", cfg)
 	u, _ := url.Parse(fmt.Sprintf("http://%s", cfg.Write.Address))
 	c, err := client.NewClient(client.Config{URL: *u})
 	if err != nil {
@@ -132,7 +131,7 @@ func resetDB(c *client.Client, database string) error {
 // It returns the total number of points that were during the test,
 // an slice of all of the stress tests response times,
 // and the times that the test started at and ended as a `Timer`
-func Run(cfg *Config) (totalPoints int, failedRequests int, responseTimes ResponseTimes, timer *Timer) {
+func Run(cfg *Config, done chan struct{}) (totalPoints int, failedRequests int, responseTimes ResponseTimes, timer *Timer) {
 
 	c, err := cfg.NewClient()
 	if err != nil {
@@ -174,7 +173,7 @@ func Run(cfg *Config) (totalPoints int, failedRequests int, responseTimes Respon
 				p, ok := iter.Next()
 				for ok {
 					points = append(points, p)
-					if len(points) == cfg.Write.BatchSize {
+					if len(points) >= cfg.Write.BatchSize {
 						ch <- points
 						points = []client.Point{}
 					}
@@ -236,6 +235,10 @@ func Run(cfg *Config) (totalPoints int, failedRequests int, responseTimes Respon
 	}
 
 	wg.Wait()
+	done <- struct{}{}
+
+	//	q := cfg.Queries[0]
+	//	Qry(q, c)
 
 	return
 }

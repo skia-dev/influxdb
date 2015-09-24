@@ -56,7 +56,19 @@ func main() {
 
 	}
 
-	totalPoints, failedRequests, responseTimes, timer := runner.Run(cfg)
+	d := make(chan struct{})
+	rs := make(chan runner.QueryResults)
+
+	if cfg.SeriesQuery.Enabled {
+		go runner.SeriesQuery(cfg, d, rs)
+	}
+
+	//	if cfg.MeasurementQuery.Enabled {
+	//		go runner.MeasurementQuery(cfg, d, rs, send, current)
+	//	}
+
+	// Get the stress results
+	totalPoints, failedRequests, responseTimes, timer := runner.Run(cfg, d)
 
 	sort.Sort(sort.Reverse(sort.Interface(responseTimes)))
 
@@ -73,4 +85,35 @@ func main() {
 	for _, r := range responseTimes[:100] {
 		fmt.Println(time.Duration(r.Value))
 	}
+
+	// Get series query results
+	if cfg.SeriesQuery.Enabled {
+		qrs := <-rs
+
+		queryTotal := int64(0)
+		for _, qt := range qrs.ResponseTimes {
+			queryTotal += int64(qt.Value)
+		}
+		seriesQueryMean := queryTotal / int64(len(qrs.ResponseTimes))
+
+		fmt.Printf("Queried %d times with a average response time of %v milliseconds\n", qrs.TotalQueries, time.Duration(seriesQueryMean).Seconds()*1000)
+
+	}
+
+	// Get measurement query results
+	//if cfg.MeasurementQuery.Enabled {
+	//	qrs := <-rs
+
+	//	queryTotal := int64(0)
+	//	for _, qt := range qrs.ResponseTimes {
+	//		queryTotal += int64(qt.Value)
+	//	}
+	//	seriesQueryMean := queryTotal / int64(len(qrs.ResponseTimes))
+
+	//	fmt.Printf("Queried %d times with a average response time of %v milliseconds\n", qrs.TotalQueries, time.Duration(seriesQueryMean).Seconds()*1000)
+
+	//}
+
+	return
+
 }
