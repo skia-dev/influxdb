@@ -63,12 +63,14 @@ func main() {
 		go runner.SeriesQuery(cfg, d, rs)
 	}
 
-	//	if cfg.MeasurementQuery.Enabled {
-	//		go runner.MeasurementQuery(cfg, d, rs, send, current)
-	//	}
+	d2 := make(chan struct{})
+	ts := make(chan time.Time)
+	if cfg.MeasurementQuery.Enabled {
+		go runner.MeasurementQuery(cfg, d2, ts)
+	}
 
 	// Get the stress results
-	totalPoints, failedRequests, responseTimes, timer := runner.Run(cfg, d)
+	totalPoints, failedRequests, responseTimes, timer := runner.Run(cfg, d, d2, ts)
 
 	sort.Sort(sort.Reverse(sort.Interface(responseTimes)))
 
@@ -89,6 +91,7 @@ func main() {
 	// Get series query results
 	if cfg.SeriesQuery.Enabled {
 		qrs := <-rs
+		//<-d2
 
 		queryTotal := int64(0)
 		for _, qt := range qrs.ResponseTimes {
