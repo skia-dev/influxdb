@@ -1,4 +1,4 @@
-package escape // import "github.com/influxdata/influxdb/pkg/escape"
+package escape // import "github.com/skia-dev/influxdb/pkg/escape"
 
 import "bytes"
 

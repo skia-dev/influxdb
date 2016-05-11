@@ -1,4 +1,4 @@
-package snapshotter // import "github.com/influxdata/influxdb/services/snapshotter"
+package snapshotter // import "github.com/skia-dev/influxdb/services/snapshotter"
 
 import (
 	"bytes"
@@ -13,9 +13,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/influxdata/influxdb"
-	"github.com/influxdata/influxdb/services/meta"
-	"github.com/influxdata/influxdb/tsdb"
+	"github.com/skia-dev/influxdb"
+	"github.com/skia-dev/influxdb/services/meta"
+	"github.com/skia-dev/influxdb/tsdb"
 )
 
 const (

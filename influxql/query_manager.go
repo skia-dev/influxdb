@@ -6,7 +6,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/influxdata/influxdb/models"
+	"github.com/skia-dev/influxdb/models"
 )
 
 var (

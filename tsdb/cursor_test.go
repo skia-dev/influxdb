@@ -10,9 +10,9 @@ import (
 	"testing/quick"
 
 	"github.com/davecgh/go-spew/spew"
-	"github.com/influxdata/influxdb/influxql"
-	"github.com/influxdata/influxdb/pkg/deep"
-	"github.com/influxdata/influxdb/tsdb"
+	"github.com/skia-dev/influxdb/influxql"
+	"github.com/skia-dev/influxdb/pkg/deep"
+	"github.com/skia-dev/influxdb/tsdb"
 )
 
 // Ensure the multi-cursor can correctly iterate across a single subcursor.

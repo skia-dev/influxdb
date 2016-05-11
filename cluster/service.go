@@ -12,9 +12,9 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/influxdata/influxdb"
-	"github.com/influxdata/influxdb/influxql"
-	"github.com/influxdata/influxdb/tsdb"
+	"github.com/skia-dev/influxdb"
+	"github.com/skia-dev/influxdb/influxql"
+	"github.com/skia-dev/influxdb/tsdb"
 )
 
 // MaxMessageSize defines how large a message can be before we reject it

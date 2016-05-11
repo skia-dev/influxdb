@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/influxdata/influxdb/client"
-	"github.com/influxdata/influxdb/cmd/influx/cli"
+	"github.com/skia-dev/influxdb/client"
+	"github.com/skia-dev/influxdb/cmd/influx/cli"
 )
 
 // These variables are populated via the Go linker.

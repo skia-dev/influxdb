@@ -12,11 +12,11 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/influxdata/influxdb"
-	"github.com/influxdata/influxdb/influxql"
-	"github.com/influxdata/influxdb/models"
-	"github.com/influxdata/influxdb/monitor"
-	"github.com/influxdata/influxdb/services/meta"
+	"github.com/skia-dev/influxdb"
+	"github.com/skia-dev/influxdb/influxql"
+	"github.com/skia-dev/influxdb/models"
+	"github.com/skia-dev/influxdb/monitor"
+	"github.com/skia-dev/influxdb/services/meta"
 )
 
 // A QueryExecutor is responsible for processing a influxql.Query and

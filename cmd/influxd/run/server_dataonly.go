@@ -3,15 +3,15 @@
 package run
 
 import (
-	"github.com/influxdata/influxdb/services/admin"
-	"github.com/influxdata/influxdb/services/collectd"
-	"github.com/influxdata/influxdb/services/continuous_querier"
-	"github.com/influxdata/influxdb/services/graphite"
-	"github.com/influxdata/influxdb/services/httpd"
-	"github.com/influxdata/influxdb/services/opentsdb"
-	"github.com/influxdata/influxdb/services/precreator"
-	"github.com/influxdata/influxdb/services/retention"
-	"github.com/influxdata/influxdb/services/udp"
+	"github.com/skia-dev/influxdb/services/admin"
+	"github.com/skia-dev/influxdb/services/collectd"
+	"github.com/skia-dev/influxdb/services/continuous_querier"
+	"github.com/skia-dev/influxdb/services/graphite"
+	"github.com/skia-dev/influxdb/services/httpd"
+	"github.com/skia-dev/influxdb/services/opentsdb"
+	"github.com/skia-dev/influxdb/services/precreator"
+	"github.com/skia-dev/influxdb/services/retention"
+	"github.com/skia-dev/influxdb/services/udp"
 )
 
 func (s *Server) appendRetentionPolicyService(c retention.Config) {

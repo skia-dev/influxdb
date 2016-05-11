@@ -1,4 +1,4 @@
-package cli // import "github.com/influxdata/influxdb/cmd/influx/cli"
+package cli // import "github.com/skia-dev/influxdb/cmd/influx/cli"
 
 import (
 	"bytes"
@@ -19,9 +19,9 @@ import (
 	"syscall"
 	"text/tabwriter"
 
-	"github.com/influxdata/influxdb/client"
-	"github.com/influxdata/influxdb/importer/v8"
-	"github.com/influxdata/influxdb/models"
+	"github.com/skia-dev/influxdb/client"
+	"github.com/skia-dev/influxdb/importer/v8"
+	"github.com/skia-dev/influxdb/models"
 	"github.com/peterh/liner"
 )
 

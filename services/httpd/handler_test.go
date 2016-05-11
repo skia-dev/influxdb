@@ -10,11 +10,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/influxdata/influxdb"
-	"github.com/influxdata/influxdb/influxql"
-	"github.com/influxdata/influxdb/models"
-	"github.com/influxdata/influxdb/services/httpd"
-	"github.com/influxdata/influxdb/services/meta"
+	"github.com/skia-dev/influxdb"
+	"github.com/skia-dev/influxdb/influxql"
+	"github.com/skia-dev/influxdb/models"
+	"github.com/skia-dev/influxdb/services/httpd"
+	"github.com/skia-dev/influxdb/services/meta"
 )
 
 // Ensure the handler returns results from a query (including nil results).

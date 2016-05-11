@@ -17,12 +17,12 @@ import (
 	"time"
 
 	"github.com/bmizerany/pat"
-	"github.com/influxdata/influxdb"
-	"github.com/influxdata/influxdb/influxql"
-	"github.com/influxdata/influxdb/models"
-	"github.com/influxdata/influxdb/services/continuous_querier"
-	"github.com/influxdata/influxdb/services/meta"
-	"github.com/influxdata/influxdb/uuid"
+	"github.com/skia-dev/influxdb"
+	"github.com/skia-dev/influxdb/influxql"
+	"github.com/skia-dev/influxdb/models"
+	"github.com/skia-dev/influxdb/services/continuous_querier"
+	"github.com/skia-dev/influxdb/services/meta"
+	"github.com/skia-dev/influxdb/uuid"
 )
 
 const (

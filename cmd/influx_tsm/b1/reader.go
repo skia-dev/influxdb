@@ -1,4 +1,4 @@
-package b1 // import "github.com/influxdata/influxdb/cmd/influx_tsm/b1"
+package b1 // import "github.com/skia-dev/influxdb/cmd/influx_tsm/b1"
 
 import (
 	"encoding/binary"
@@ -7,9 +7,9 @@ import (
 	"time"
 
 	"github.com/boltdb/bolt"
-	"github.com/influxdata/influxdb/cmd/influx_tsm/stats"
-	"github.com/influxdata/influxdb/cmd/influx_tsm/tsdb"
-	"github.com/influxdata/influxdb/tsdb/engine/tsm1"
+	"github.com/skia-dev/influxdb/cmd/influx_tsm/stats"
+	"github.com/skia-dev/influxdb/cmd/influx_tsm/tsdb"
+	"github.com/skia-dev/influxdb/tsdb/engine/tsm1"
 )
 
 const DefaultChunkSize int = 1000

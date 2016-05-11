@@ -14,7 +14,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/influxdata/influxdb/client"
+	"github.com/skia-dev/influxdb/client"
 )
 
 func BenchmarkWrite(b *testing.B) {
@@ -658,7 +658,7 @@ func TestClient_CustomCertificates(t *testing.T) {
 	// ST = CA
 	// L = San Francisco
 	// O = InfluxDB
-	// CN = github.com/influxdata
+	// CN = github.com/skia-dev
 	// [v3_req]
 	// keyUsage = keyEncipherment, dataEncipherment
 	// extendedKeyUsage = serverAuth

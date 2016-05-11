@@ -1,4 +1,4 @@
-package admin // import "github.com/influxdata/influxdb/services/admin"
+package admin // import "github.com/skia-dev/influxdb/services/admin"
 
 import (
 	"crypto/tls"
@@ -10,7 +10,7 @@ import (
 	"strings"
 
 	// Register static assets via statik.
-	_ "github.com/influxdata/influxdb/services/admin/statik"
+	_ "github.com/skia-dev/influxdb/services/admin/statik"
 	"github.com/rakyll/statik/fs"
 )
 

@@ -1,4 +1,4 @@
-package tsdb // import "github.com/influxdata/influxdb/cmd/influx_tsm/tsdb"
+package tsdb // import "github.com/skia-dev/influxdb/cmd/influx_tsm/tsdb"
 
 import (
 	"fmt"
@@ -9,7 +9,7 @@ import (
 	"time"
 
 	"github.com/boltdb/bolt"
-	"github.com/influxdata/influxdb/pkg/slices"
+	"github.com/skia-dev/influxdb/pkg/slices"
 )
 
 // Flags for differentiating between engines

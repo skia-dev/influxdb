@@ -3,8 +3,8 @@ package cluster
 import (
 	"time"
 
-	"github.com/influxdata/influxdb/influxql"
-	"github.com/influxdata/influxdb/services/meta"
+	"github.com/skia-dev/influxdb/influxql"
+	"github.com/skia-dev/influxdb/services/meta"
 )
 
 // MetaClient is an interface for accessing meta data.

@@ -1,4 +1,4 @@
-package copier // import "github.com/influxdata/influxdb/services/copier"
+package copier // import "github.com/skia-dev/influxdb/services/copier"
 
 import (
 	"encoding/binary"
@@ -12,9 +12,9 @@ import (
 	"sync"
 
 	"github.com/gogo/protobuf/proto"
-	"github.com/influxdata/influxdb/services/copier/internal"
-	"github.com/influxdata/influxdb/tcp"
-	"github.com/influxdata/influxdb/tsdb"
+	"github.com/skia-dev/influxdb/services/copier/internal"
+	"github.com/skia-dev/influxdb/tcp"
+	"github.com/skia-dev/influxdb/tsdb"
 )
 
 //go:generate protoc --gogo_out=. internal/internal.proto

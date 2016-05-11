@@ -1,4 +1,4 @@
-package udp // import "github.com/influxdata/influxdb/services/udp"
+package udp // import "github.com/skia-dev/influxdb/services/udp"
 
 import (
 	"errors"
@@ -10,10 +10,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/influxdata/influxdb"
-	"github.com/influxdata/influxdb/models"
-	"github.com/influxdata/influxdb/services/meta"
-	"github.com/influxdata/influxdb/tsdb"
+	"github.com/skia-dev/influxdb"
+	"github.com/skia-dev/influxdb/models"
+	"github.com/skia-dev/influxdb/services/meta"
+	"github.com/skia-dev/influxdb/tsdb"
 )
 
 const (

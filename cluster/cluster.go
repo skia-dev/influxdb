@@ -1,1 +1,1 @@
-package cluster // import "github.com/influxdata/influxdb/cluster"
+package cluster // import "github.com/skia-dev/influxdb/cluster"

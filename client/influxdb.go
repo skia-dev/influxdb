@@ -1,4 +1,4 @@
-package client // import "github.com/influxdata/influxdb/client"
+package client // import "github.com/skia-dev/influxdb/client"
 
 import (
 	"bytes"
@@ -15,7 +15,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/influxdata/influxdb/models"
+	"github.com/skia-dev/influxdb/models"
 )
 
 const (

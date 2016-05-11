@@ -14,10 +14,10 @@ import (
 	"sync"
 
 	"github.com/gogo/protobuf/proto"
-	"github.com/influxdata/influxdb"
-	"github.com/influxdata/influxdb/influxql"
-	"github.com/influxdata/influxdb/models"
-	"github.com/influxdata/influxdb/tsdb/internal"
+	"github.com/skia-dev/influxdb"
+	"github.com/skia-dev/influxdb/influxql"
+	"github.com/skia-dev/influxdb/models"
+	"github.com/skia-dev/influxdb/tsdb/internal"
 )
 
 const (

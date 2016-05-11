@@ -1,4 +1,4 @@
-package models // import "github.com/influxdata/influxdb/models"
+package models // import "github.com/skia-dev/influxdb/models"
 
 import (
 	"bytes"
@@ -12,7 +12,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/influxdata/influxdb/pkg/escape"
+	"github.com/skia-dev/influxdb/pkg/escape"
 )
 
 var (

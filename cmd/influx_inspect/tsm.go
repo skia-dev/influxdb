@@ -13,8 +13,8 @@ import (
 	"time"
 
 	"github.com/golang/snappy"
-	"github.com/influxdata/influxdb/tsdb"
-	"github.com/influxdata/influxdb/tsdb/engine/tsm1"
+	"github.com/skia-dev/influxdb/tsdb"
+	"github.com/skia-dev/influxdb/tsdb/engine/tsm1"
 )
 
 // these consts are for the old tsm format. They can be removed once we remove

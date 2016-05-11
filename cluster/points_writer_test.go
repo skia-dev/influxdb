@@ -8,10 +8,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/influxdata/influxdb"
-	"github.com/influxdata/influxdb/cluster"
-	"github.com/influxdata/influxdb/models"
-	"github.com/influxdata/influxdb/services/meta"
+	"github.com/skia-dev/influxdb"
+	"github.com/skia-dev/influxdb/cluster"
+	"github.com/skia-dev/influxdb/models"
+	"github.com/skia-dev/influxdb/services/meta"
 )
 
 // TODO(benbjohnson): Rewrite tests to use cluster_test.MetaClient.

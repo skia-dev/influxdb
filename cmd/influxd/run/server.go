@@ -10,20 +10,20 @@ import (
 	"runtime/pprof"
 	"time"
 
-	"github.com/influxdata/influxdb"
-	"github.com/influxdata/influxdb/cluster"
-	"github.com/influxdata/influxdb/influxql"
-	"github.com/influxdata/influxdb/models"
-	"github.com/influxdata/influxdb/monitor"
-	"github.com/influxdata/influxdb/services/copier"
-	"github.com/influxdata/influxdb/services/meta"
-	"github.com/influxdata/influxdb/services/snapshotter"
-	"github.com/influxdata/influxdb/services/subscriber"
-	"github.com/influxdata/influxdb/tcp"
-	"github.com/influxdata/influxdb/tsdb"
-	client "github.com/influxdata/usage-client/v1"
+	"github.com/skia-dev/influxdb"
+	"github.com/skia-dev/influxdb/cluster"
+	"github.com/skia-dev/influxdb/influxql"
+	"github.com/skia-dev/influxdb/models"
+	"github.com/skia-dev/influxdb/monitor"
+	"github.com/skia-dev/influxdb/services/copier"
+	"github.com/skia-dev/influxdb/services/meta"
+	"github.com/skia-dev/influxdb/services/snapshotter"
+	"github.com/skia-dev/influxdb/services/subscriber"
+	"github.com/skia-dev/influxdb/tcp"
+	"github.com/skia-dev/influxdb/tsdb"
+	client "github.com/skia-dev/usage-client/v1"
 	// Initialize the engine packages
-	_ "github.com/influxdata/influxdb/tsdb/engine"
+	_ "github.com/skia-dev/influxdb/tsdb/engine"
 )
 
 var startTime time.Time

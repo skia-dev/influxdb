@@ -1,4 +1,4 @@
-package toml // import "github.com/influxdata/influxdb/toml"
+package toml // import "github.com/skia-dev/influxdb/toml"
 
 import (
 	"fmt"

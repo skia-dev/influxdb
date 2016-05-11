@@ -6,10 +6,10 @@ import (
 	"net"
 	"time"
 
-	"github.com/influxdata/influxdb/cluster"
-	"github.com/influxdata/influxdb/models"
-	"github.com/influxdata/influxdb/services/meta"
-	"github.com/influxdata/influxdb/tcp"
+	"github.com/skia-dev/influxdb/cluster"
+	"github.com/skia-dev/influxdb/models"
+	"github.com/skia-dev/influxdb/services/meta"
+	"github.com/skia-dev/influxdb/tcp"
 )
 
 type metaClient struct {

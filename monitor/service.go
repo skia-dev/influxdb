@@ -1,4 +1,4 @@
-package monitor // import "github.com/influxdata/influxdb/monitor"
+package monitor // import "github.com/skia-dev/influxdb/monitor"
 
 import (
 	"expvar"
@@ -11,10 +11,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/influxdata/influxdb"
-	"github.com/influxdata/influxdb/models"
-	"github.com/influxdata/influxdb/monitor/diagnostics"
-	"github.com/influxdata/influxdb/services/meta"
+	"github.com/skia-dev/influxdb"
+	"github.com/skia-dev/influxdb/models"
+	"github.com/skia-dev/influxdb/monitor/diagnostics"
+	"github.com/skia-dev/influxdb/services/meta"
 )
 
 const leaderWaitTimeout = 30 * time.Second

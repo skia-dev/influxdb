@@ -4,7 +4,7 @@ import (
 	"container/heap"
 	"math"
 
-	"github.com/influxdata/influxdb/influxql"
+	"github.com/skia-dev/influxdb/influxql"
 )
 
 // EOF represents a "not found" key returned by a Cursor.

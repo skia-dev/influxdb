@@ -3,7 +3,7 @@ package continuous_querier
 import (
 	"time"
 
-	"github.com/influxdata/influxdb/toml"
+	"github.com/skia-dev/influxdb/toml"
 )
 
 // Default values for aspects of interval computation.

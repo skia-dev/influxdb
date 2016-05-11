@@ -1,4 +1,4 @@
-package client // import "github.com/influxdata/influxdb/client/v2"
+package client // import "github.com/skia-dev/influxdb/client/v2"
 
 import (
 	"bytes"
@@ -12,7 +12,7 @@ import (
 	"net/url"
 	"time"
 
-	"github.com/influxdata/influxdb/models"
+	"github.com/skia-dev/influxdb/models"
 )
 
 // UDPPayloadSize is a reasonable default payload size for UDP packets that

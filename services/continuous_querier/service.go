@@ -1,4 +1,4 @@
-package continuous_querier // import "github.com/influxdata/influxdb/services/continuous_querier"
+package continuous_querier // import "github.com/skia-dev/influxdb/services/continuous_querier"
 
 import (
 	"errors"
@@ -10,9 +10,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/influxdata/influxdb"
-	"github.com/influxdata/influxdb/influxql"
-	"github.com/influxdata/influxdb/services/meta"
+	"github.com/skia-dev/influxdb"
+	"github.com/skia-dev/influxdb/influxql"
+	"github.com/skia-dev/influxdb/services/meta"
 )
 
 const (

@@ -10,7 +10,7 @@ import (
 	"strings"
 	"text/tabwriter"
 
-	"github.com/influxdata/influxdb/tsdb"
+	"github.com/skia-dev/influxdb/tsdb"
 )
 
 func cmdInfo(path string) {

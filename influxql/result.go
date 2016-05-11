@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"errors"
 
-	"github.com/influxdata/influxdb/models"
+	"github.com/skia-dev/influxdb/models"
 )
 
 // TagSet is a fundamental concept within the query system. It represents a composite series,

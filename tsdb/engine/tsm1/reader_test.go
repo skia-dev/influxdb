@@ -6,7 +6,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/influxdata/influxdb/tsdb/engine/tsm1"
+	"github.com/skia-dev/influxdb/tsdb/engine/tsm1"
 )
 
 func TestTSMReader_Type(t *testing.T) {

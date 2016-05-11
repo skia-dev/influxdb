@@ -12,8 +12,8 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/influxdata/influxdb"
-	"github.com/influxdata/influxdb/models"
+	"github.com/skia-dev/influxdb"
+	"github.com/skia-dev/influxdb/models"
 )
 
 // Handler is an http.Handler for the service.

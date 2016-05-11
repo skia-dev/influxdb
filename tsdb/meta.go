@@ -9,10 +9,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/influxdata/influxdb"
-	"github.com/influxdata/influxdb/influxql"
-	"github.com/influxdata/influxdb/pkg/escape"
-	"github.com/influxdata/influxdb/tsdb/internal"
+	"github.com/skia-dev/influxdb"
+	"github.com/skia-dev/influxdb/influxql"
+	"github.com/skia-dev/influxdb/pkg/escape"
+	"github.com/skia-dev/influxdb/tsdb/internal"
 
 	"github.com/gogo/protobuf/proto"
 )

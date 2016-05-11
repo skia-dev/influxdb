@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/influxdata/influxdb/influxql"
+	"github.com/skia-dev/influxdb/influxql"
 )
 
 func TestQueryManager_AttachQuery(t *testing.T) {

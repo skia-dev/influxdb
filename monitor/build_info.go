@@ -1,6 +1,6 @@
 package monitor
 
-import "github.com/influxdata/influxdb/monitor/diagnostics"
+import "github.com/skia-dev/influxdb/monitor/diagnostics"
 
 // system captures build diagnostics
 type build struct {

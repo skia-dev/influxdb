@@ -1,4 +1,4 @@
-package httpd // import "github.com/influxdata/influxdb/services/httpd"
+package httpd // import "github.com/skia-dev/influxdb/services/httpd"
 
 import (
 	"crypto/tls"
@@ -11,7 +11,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/influxdata/influxdb"
+	"github.com/skia-dev/influxdb"
 )
 
 // statistics gathered by the httpd package.

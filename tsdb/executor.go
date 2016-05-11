@@ -1,6 +1,6 @@
 package tsdb
 
-import "github.com/influxdata/influxdb/models"
+import "github.com/skia-dev/influxdb/models"
 
 // Executor is an interface for a query executor.
 type Executor interface {

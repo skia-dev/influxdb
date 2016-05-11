@@ -12,9 +12,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/influxdata/influxdb/client"
-	"github.com/influxdata/influxdb/cmd/influx/cli"
-	"github.com/influxdata/influxdb/influxql"
+	"github.com/skia-dev/influxdb/client"
+	"github.com/skia-dev/influxdb/cmd/influx/cli"
+	"github.com/skia-dev/influxdb/influxql"
 	"github.com/peterh/liner"
 )
 

@@ -5,9 +5,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/influxdata/influxdb/cluster"
-	"github.com/influxdata/influxdb/services/meta"
-	"github.com/influxdata/influxdb/services/subscriber"
+	"github.com/skia-dev/influxdb/cluster"
+	"github.com/skia-dev/influxdb/services/meta"
+	"github.com/skia-dev/influxdb/services/subscriber"
 )
 
 type MetaClient struct {

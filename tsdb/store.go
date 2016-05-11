@@ -1,4 +1,4 @@
-package tsdb // import "github.com/influxdata/influxdb/tsdb"
+package tsdb // import "github.com/skia-dev/influxdb/tsdb"
 
 import (
 	"errors"
@@ -14,8 +14,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/influxdata/influxdb/influxql"
-	"github.com/influxdata/influxdb/models"
+	"github.com/skia-dev/influxdb/influxql"
+	"github.com/skia-dev/influxdb/models"
 )
 
 var (

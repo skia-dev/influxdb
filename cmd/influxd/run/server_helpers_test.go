@@ -18,11 +18,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/influxdata/influxdb/client/v2"
-	"github.com/influxdata/influxdb/cmd/influxd/run"
-	"github.com/influxdata/influxdb/services/httpd"
-	"github.com/influxdata/influxdb/services/meta"
-	"github.com/influxdata/influxdb/toml"
+	"github.com/skia-dev/influxdb/client/v2"
+	"github.com/skia-dev/influxdb/cmd/influxd/run"
+	"github.com/skia-dev/influxdb/services/httpd"
+	"github.com/skia-dev/influxdb/services/meta"
+	"github.com/skia-dev/influxdb/toml"
 )
 
 const emptyResults = `{"results":[{}]}`

@@ -1,4 +1,4 @@
-package collectd // import "github.com/influxdata/influxdb/services/collectd"
+package collectd // import "github.com/skia-dev/influxdb/services/collectd"
 
 import (
 	"expvar"
@@ -10,10 +10,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/influxdata/influxdb"
-	"github.com/influxdata/influxdb/models"
-	"github.com/influxdata/influxdb/services/meta"
-	"github.com/influxdata/influxdb/tsdb"
+	"github.com/skia-dev/influxdb"
+	"github.com/skia-dev/influxdb/models"
+	"github.com/skia-dev/influxdb/services/meta"
+	"github.com/skia-dev/influxdb/tsdb"
 	"github.com/kimor79/gollectd"
 )
 

@@ -3,7 +3,7 @@ package meta
 import (
 	"fmt"
 
-	"github.com/influxdata/influxdb/influxql"
+	"github.com/skia-dev/influxdb/influxql"
 )
 
 type QueryAuthorizer struct {

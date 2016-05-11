@@ -1,4 +1,4 @@
-package tsm1 // import "github.com/influxdata/influxdb/tsdb/engine/tsm1"
+package tsm1 // import "github.com/skia-dev/influxdb/tsdb/engine/tsm1"
 
 import (
 	"archive/tar"
@@ -11,9 +11,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/influxdata/influxdb/influxql"
-	"github.com/influxdata/influxdb/models"
-	"github.com/influxdata/influxdb/tsdb"
+	"github.com/skia-dev/influxdb/influxql"
+	"github.com/skia-dev/influxdb/models"
+	"github.com/skia-dev/influxdb/tsdb"
 )
 
 //go:generate tmpl -data=@iterator.gen.go.tmpldata iterator.gen.go.tmpl
